@@ -152,8 +152,17 @@ class Telnet {
             $this->valid = true;
         }
 
+        // this is seen on outlook
+        if (preg_match('/Recipient\sOK/i', $this->rcptResponse)) {
+            $this->valid = true;
+        }
+        
         return $this->valid;
-    } 
+    }
+
+    public function getRcptToResponse() {
+        return $this->rcptResponse;
+    }
     
 }
 
