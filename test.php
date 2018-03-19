@@ -26,8 +26,15 @@ $helo = $telnet->sayHelo();
 $telnet->mailFrom('cgalgo@openovate.com');
 // set receive to
 $telnet->rcptTo($email);
+if($host == 'yahoo.com') {
+    $telnet->data();
+    $telnet->addHeader('Subject', 'test');
+    $telnet->setBody('This is a test');
+}
+
 // check
 echo $telnet->check();
+echo $telnet->getResponse();
 
 
 
