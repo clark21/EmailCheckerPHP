@@ -159,7 +159,7 @@ class Telnet {
         }
 
         // yahoo
-        if (preg_match('/ok dirdel/', $this->response)) {
+        if (preg_match('/ok\sdirdel/', $this->response)) {
             $valid = true;
         }
         
