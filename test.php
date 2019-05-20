@@ -19,7 +19,7 @@ $lookup = new \EmailChecker\Lookup ($host);
 // get mx records
 $mx = $lookup->getMxRecords();
 // telnet
-$telnet = new \EmailChecker\Telnet();
+$telnet = new \EmailChecker\Telnet($host);
 // say helo
 $helo = $telnet->sayHelo();
 if (!$helo) {
