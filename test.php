@@ -23,6 +23,7 @@ $telnet = new \EmailChecker\Telnet($mx[0]);
 // say helo
 $helo = $telnet->sayHelo();
 if (!$helo) {
+    $telnet = new \EmailChecker\Telnet($mx[0]);
     $telnet->sayHelo($email);
 }
 
