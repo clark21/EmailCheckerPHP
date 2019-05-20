@@ -20,12 +20,12 @@ $lookup = new \EmailChecker\Lookup ($host);
 $mx = $lookup->getMxRecords();
 // telnet
 $telnet = new \EmailChecker\Telnet();
-if (!$telnet) {
-    $telnet = new \EmailChecker\Telnet($email);
-}
-
 // say helo
 $helo = $telnet->sayHelo();
+if (!$helo) {
+    $telnet->sayHelo($email);
+}
+
 // set mail from
 $telnet->mailFrom('cgalgo@openovate.com');
 // set receive to
