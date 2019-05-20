@@ -8,7 +8,7 @@ namespace EmailChecker;
  */
 class Telnet {
     protected $resource = null;
-    protected $wait = 3;
+    public $wait = 60;
     protected $response = null;
     protected $valid = false;
     protected $headers = [];
