@@ -162,6 +162,11 @@ class Telnet {
         if (preg_match('/ok/', $this->response) && preg_match('/dirdel/', $this->response)) {
             $this->valid = true;
         }
+
+        // Accepted
+        if (preg_match('/accepted/i', $this->response)) {
+            $this->valid = true;
+        }
         
         return $this->valid;
     }
