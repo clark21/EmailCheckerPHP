@@ -24,7 +24,7 @@ $telnet = new \EmailChecker\Telnet($mx[0]);
 $helo = $telnet->sayHelo();
 if (!$helo) {
     $telnet = new \EmailChecker\Telnet($mx[0]);
-    $telnet->sayHelo($email);
+    $telnet->sayHelo('openovate.com');
 }
 
 // set mail from
@@ -38,8 +38,8 @@ if($host == 'yahoo.com') {
 }
 
 // check
-echo $telnet->check();
-echo $telnet->getResponse();
+echo $telnet->check() . "-";
+//echo $telnet->getResponse();
 
 
 

@@ -167,6 +167,10 @@ class Telnet {
         if (preg_match('/accepted/i', $this->response)) {
             $this->valid = true;
         }
+
+        if (preg_match('/\sOk/', $this->response)) {
+            $this->valid = true;
+        }
         
         return $this->valid;
     }
